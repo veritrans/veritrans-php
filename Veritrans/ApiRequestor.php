@@ -47,7 +47,10 @@ class Veritrans_ApiRequestor {
     }
     else {
       $result_array = json_decode($result);
-      if (!in_array($result_array->status_code, array(200, 201, 202))) {
+
+      if ( (array_key_exists('status_code', $result_array) && !in_array($result_array->status_code, array(200, 201, 202)) ) ||
+           (array_key_exists('transactions', $result_array) && !is_array($result_array->transactions))
+          ) {
         $message = 'Veritrans Error (' . $result_array->status_code . '): '
             . $result_array->status_message;
         throw new Exception($message, $result_array->status_code);
