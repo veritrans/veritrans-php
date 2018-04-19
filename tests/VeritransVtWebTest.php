@@ -21,7 +21,7 @@ class VeritransVtWebTest extends PHPUnit_Framework_TestCase
 
       $this->assertEquals(
         VT_Tests::$lastHttpRequest["url"],
-        "https://api.sandbox.veritrans.co.id/v2/charge"
+        "https://api.sandbox.midtrans.com/v2/charge"
       );
 
       $this->assertEquals(
@@ -87,9 +87,10 @@ class VeritransVtWebTest extends PHPUnit_Framework_TestCase
         $paymentUrl = Veritrans_Vtweb::getRedirectionUrl($params);
       } catch (Exception $error) {
         $errorHappen = true;
-        $this->assertEquals(
-          $error->getMessage(),
-          "Veritrans Error (401): Access denied due to unauthorized transaction, please check client or server key");
+        $this->assertContains(
+          "authorized",
+          $error->getMessage()
+        );
       }
 
       $this->assertTrue($errorHappen);

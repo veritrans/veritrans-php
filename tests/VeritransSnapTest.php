@@ -22,7 +22,7 @@ class VeritransSnapTest extends PHPUnit_Framework_TestCase
 
       $this->assertEquals(
         VT_Tests::$lastHttpRequest["url"],
-        "https://app.sandbox.veritrans.co.id/snap/v1/transactions"
+        "https://app.sandbox.midtrans.com/snap/v1/transactions"
       );
 
       $this->assertEquals(
@@ -90,9 +90,10 @@ class VeritransSnapTest extends PHPUnit_Framework_TestCase
         $tokenId = Veritrans_Snap::getSnapToken($params);
       } catch (Exception $error) {
         $errorHappen = true;
-        $this->assertEquals(
-          $error->getMessage(),
-          "Veritrans Error (401): Access denied due to unauthorized transaction, please check client or server key,Visit https://snap-docs.midtrans.com/#request-headers for more details");
+        $this->assertContains(
+          "authorized",
+          $error->getMessage()
+        );
       }
 
       $this->assertTrue($errorHappen);

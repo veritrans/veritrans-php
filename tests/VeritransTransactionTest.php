@@ -30,7 +30,7 @@ class VeritransTransactionTest extends PHPUnit_Framework_TestCase
 
       $this->assertEquals(
         VT_Tests::$lastHttpRequest["url"],
-        "https://api.sandbox.veritrans.co.id/v2/Order-111/status"
+        "https://api.sandbox.midtrans.com/v2/Order-111/status"
       );
 
       $fields = VT_Tests::lastReqOptions();
@@ -64,9 +64,10 @@ class VeritransTransactionTest extends PHPUnit_Framework_TestCase
         $status = Veritrans_Transaction::status("Order-111");
       } catch (Exception $error) {
         $errorHappen = true;
-        $this->assertEquals(
-          $error->getMessage(),
-          "Veritrans Error (401): Access denied due to unauthorized transaction, please check client or server key");
+        $this->assertContains(
+          "authorized",
+          $error->getMessage()
+        );
       }
 
       $this->assertTrue($errorHappen);
@@ -95,7 +96,7 @@ class VeritransTransactionTest extends PHPUnit_Framework_TestCase
 
       $this->assertEquals(
         VT_Tests::$lastHttpRequest["url"],
-        "https://api.sandbox.veritrans.co.id/v2/Order-111/approve"
+        "https://api.sandbox.midtrans.com/v2/Order-111/approve"
       );
 
       $fields = VT_Tests::lastReqOptions();
@@ -126,7 +127,7 @@ class VeritransTransactionTest extends PHPUnit_Framework_TestCase
 
       $this->assertEquals(
         VT_Tests::$lastHttpRequest["url"],
-        "https://api.sandbox.veritrans.co.id/v2/Order-111/cancel"
+        "https://api.sandbox.midtrans.com/v2/Order-111/cancel"
       );
 
       $fields = VT_Tests::lastReqOptions();
@@ -154,7 +155,7 @@ class VeritransTransactionTest extends PHPUnit_Framework_TestCase
 
       $this->assertEquals(
         VT_Tests::$lastHttpRequest["url"],
-        "https://api.sandbox.veritrans.co.id/v2/Order-111/expire"
+        "https://api.sandbox.midtrans.com/v2/Order-111/expire"
       );
 
       $fields = VT_Tests::lastReqOptions();
