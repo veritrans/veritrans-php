@@ -70,15 +70,13 @@ $customer_details = array(
   'shipping_address' => $shipping_address
 );
 
-// Optional, remove this to display all available payment methods
-$enable_payments = array('credit_card','cimb_clicks','mandiri_clickpay','echannel');
-
 // Fill transaction details
 $transaction = array(
-  'enabled_payments' => $enable_payments,
   'transaction_details' => $transaction_details,
   'customer_details' => $customer_details,
   'item_details' => $item_details,
+  // Optional, use this to display only specified payment methods
+  // 'enabled_payments' => array('credit_card','cimb_clicks','mandiri_clickpay','echannel'),
 );
 
 $snapToken = Veritrans_Snap::getSnapToken($transaction);
