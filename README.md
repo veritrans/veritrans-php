@@ -3,9 +3,21 @@ Veritrans-PHP
 
 [![Build Status](https://travis-ci.org/veritrans/veritrans-php.svg)](https://travis-ci.org/veritrans/veritrans-php)
 
-Veritrans is now :arrow_right: [Midtrans](https://midtrans.com)
+--------------------
 
-Midtrans :heart: PHP!
+> **:speaker: ANNOUNCEMENT :speaker:**
+
+**Please use the updated and composer compatible library: [Midtrans PHP](https://github.com/Midtrans/midtrans-php).
+For better more modern composer compatibility.**
+
+This repo still be here for archive and compatibility purpose. But it's always recommended to use the newer version [Midtrans PHP](https://github.com/Midtrans/midtrans-php).
+
+> **:speaker: END OF ANNOUNCEMENT :speaker:**
+
+---------------------
+
+
+[Midtrans](https://midtrans.com) :heart: PHP!
 
 This is the Official PHP wrapper/library for Midtrans Payment API. Visit [https://midtrans.com](https://midtrans.com) for more information about the product and see documentation at [http://docs.midtrans.com](http://docs.midtrans) for more technical details.
 
