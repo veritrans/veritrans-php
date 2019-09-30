@@ -1,11 +1,7 @@
-Veritrans-PHP
-===============
-
-[![Build Status](https://travis-ci.org/veritrans/veritrans-php.svg)](https://travis-ci.org/veritrans/veritrans-php)
 
 --------------------
 
-> **:speaker: ANNOUNCEMENT :speaker:**
+> **:warning::warning: ANNOUNCEMENT :warning::warning:**
 
 **Please use the updated and composer compatible library: [Midtrans PHP](https://github.com/Midtrans/midtrans-php).
 For better more modern composer compatibility.**
@@ -16,6 +12,13 @@ This repo still be here for archive and compatibility purpose. But it's always r
 
 ---------------------
 
+
+
+
+Veritrans-PHP
+===============
+
+[![Build Status](https://travis-ci.org/veritrans/veritrans-php.svg)](https://travis-ci.org/veritrans/veritrans-php)
 
 [Midtrans](https://midtrans.com) :heart: PHP!
 
